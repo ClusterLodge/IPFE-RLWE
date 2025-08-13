@@ -4,5 +4,5 @@
 *.elf
 *.a
 *.d
-src/test/test_time
-
+/src/test/test_time
+/build
