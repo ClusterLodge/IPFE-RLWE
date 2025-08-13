@@ -24,7 +24,7 @@ static void BM_rlwe_sife_keygen(benchmark::State& state) {
 
     uint32_t mpk[SIFE_L+1][SIFE_NMODULI][SIFE_N];
     uint32_t msk[SIFE_L][SIFE_NMODULI][SIFE_N];
-    rlwe_sife_setup(nullptr, nullptr);
+    rlwe_sife_setup(mpk, msk);
 
     for (auto _ : state) {
         uint32_t msk[SIFE_L][SIFE_NMODULI][SIFE_N];
@@ -40,7 +40,7 @@ static void BM_rlwe_sife_encrypt(benchmark::State& state) {
 
     uint32_t mpk[SIFE_L+1][SIFE_NMODULI][SIFE_N];
     uint32_t msk[SIFE_L][SIFE_NMODULI][SIFE_N];
-    rlwe_sife_setup(nullptr, nullptr);
+    rlwe_sife_setup(mpk, msk);
 
     for (auto _ : state) {
         uint32_t c[SIFE_L+1][SIFE_NMODULI][SIFE_N];
