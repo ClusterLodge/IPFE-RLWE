@@ -1,5 +1,7 @@
+#include "gmp.h"
 
 extern "C" {
+    #include <stdint.h>
     #include "rlwe_sife.h"
     #include "sample.h"
 }
@@ -11,7 +13,7 @@ static void BM_rlwe_sife_setup(benchmark::State& state) {
     for (auto _ : state) {
         uint32_t mpk[SIFE_L+1][SIFE_NMODULI][SIFE_N];
         uint32_t msk[SIFE_L][SIFE_NMODULI][SIFE_N];
-        rlwe_sife_setup(nullptr, nullptr);
+        rlwe_sife_setup(mpk, msk);
     }
 }
 BENCHMARK(BM_rlwe_sife_setup);
