@@ -1,5 +1,5 @@
-cmake_minimum_required(VERSION 4.0)
-project(cifer_bench)
+cmake_minimum_required(VERSION 3.11)
+project(ipfe_rlwe_bench)
 
 find_package(benchmark REQUIRED)
 
