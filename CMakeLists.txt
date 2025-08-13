@@ -7,7 +7,7 @@ set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_FLAGS "-Wall -Wextra -Wpedantic -Wredundant-decls \
 -Wnested-externs -Wmissing-include-dirs -Wstrict-prototypes -Wwrite-strings \
 -Wno-unused-parameter -Wshadow -Wold-style-definition \
--fomit-frame-pointer -march=native -mavx2")
+-march=native -mavx2")
 
 # GCC warnings that Clang doesn't provide
 if ("${CMAKE_C_COMPILER_ID}" STREQUAL "GNU")
@@ -19,7 +19,7 @@ if(NOT CMAKE_BUILD_TYPE)
 endif ()
 
 set(CMAKE_C_FLAGS_DEBUG "-g")
-set(CMAKE_C_FLAGS_RELEASE "-O2")
+set(CMAKE_C_FLAGS_RELEASE "-O3 -fomit-frame-pointer")
 
 # Header files
 include_directories(
